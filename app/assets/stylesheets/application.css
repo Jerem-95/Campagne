@@ -8,14 +8,12 @@ body{
   background-color: #F3F3F3;
 }
 
-table,th, td
-{
+table,th, td{
 border: 0px solid gray;
 text-align: center;
 }
 
-#impair:hover
-{
+#impair:hover{
     background-color: #E2E2E2;
 }
 
@@ -169,7 +167,6 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active, 
         position: relative;
         margin-right: 0;
     }
-}
 
 input[type=button], input[type=submit], input[type=reset], button, .button {
   padding: 5px 15px;
@@ -212,7 +209,6 @@ img {
   vertical-align: middle;
 }
 
-}
 h1,
 h2,
 h3,
