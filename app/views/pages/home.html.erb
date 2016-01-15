@@ -1,0 +1,50 @@
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+
+<h1>Tableau de bord des campagnes</h1>
+<p>Nombre de campagne enregistrées : <%= Contact.all.count %></p>
+<br />
+<br />
+<table cellpadding="5" cellspacing="0">
+<thead>
+	<tr bgcolor="#BCBCBC">  <!-- En-tête du tableau --> 
+ 		<td><p><strong>Développeur</strong></p></td>
+		<td><p><strong>Libellé de la campagne</strong></p></td>
+		<td><p><strong>Période</strong></p></td>
+		<td><p><strong>Coût</strong></p></td>
+		<td><p><strong>Nombre de contact</strong></p></td>
+		<td><p><strong>Nombre de devis</strong></p></td>
+		<td><p><strong>CA généré</strong></p></td>
+    <td><p><strong>Commentaires</strong></p></td>
+	</tr>	
+</thead>
+
+<tbody>	<!-- Corps du tableau --> 
+	<% @contacts.each do |contact| %>
+	<tr id="impair">
+		<td><p><%= contact.dev %></p></td>
+		<td><p><%= contact.compagne %></p></td>
+		<td><p><%= contact.periode %></p></td>
+		<td><p><%= contact.cout %> €</p></td>
+		<td><p><%= contact.contact %></p></td>
+		<td><p><%= contact.devis %></p></td>
+		<td><p><%= contact.ca %> €</p></td>
+    <td><p><%= contact.commentaires %></p></td>
+		<td width="80px"><a href="/my_app/<%= contact.id %>"><input style="width:100%" type="submit" value="Modifier" /></a></td>
+			<td width="80px"><%= form_tag "/my_app/#{contact.id}", method: "delete" do %>
+ 		    <input type="submit" value="Supprimer" /><% end %></td>
+	</tr>
+	<% end %>
+</tbody>	
+</table>
+<br />
+<br /> 
+
+
+<a href="/my_app/new"><input type="submit" value="Nouvelle campagne"></a>
+
+</div>
+  </div>
+    </div>
+      

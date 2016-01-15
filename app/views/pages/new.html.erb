@@ -1,0 +1,30 @@
+
+<div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+
+<h1>Création d'une nouvelle campagne</h1>
+
+
+<%= form_tag "/my_app/new", method: "post" do %>
+  <p><strong>Web Développeur</strong></p>
+  <select name="dev"><% @categories.each do |category| %>
+  <option style="width:480px;height:25px" value="<%= category.name %>"><%= category.name %></option><% end %></select>
+  <p><strong>Campagne*</strong></p>
+  <input type="text" name="compagne" style="width:500px;height:25px" placeholder="Obligatoire" />
+  <p><strong>Période*</strong></p>
+  <input type="text" name="periode" style="width:500px;height:25px" placeholder="Obligatoire" />
+  <p><strong>Coût de la campagne*</strong></p>
+  <input type="text" name="cout" style="width:500px;height:25px" placeholder="Obligatoire" />
+  <p><strong>Nombre de contact*</strong></p>
+  <input type="text" name="contact" style="width:500px;height:25px" placeholder="Obligatoire" />
+  <p><strong>Nombre de devis*</strong></p>
+  <input type="text" name="devis" style="width:500px;height:25px" placeholder="Obligatoire" />
+  <p><strong>CA généré*</strong></p>
+  <input type="text" name="ca" style="width:500px;height:25px" placeholder="Obligatoire" />
+  <p><strong>Commentaires</strong></p>
+  <input type="text" name="commentaires" style="width:500px;height:150px" /><br /><br />
+  <input type="submit" style="" value="Ajouter la campagne" />  <a href="/my_app/"><input type="submit" style="" value="Retourner à l'index" /></a>
+
+<% end %>
+
